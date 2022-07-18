@@ -32,22 +32,32 @@ boton = driver.find_element("xpath", '//*[@id="loginBtn"]').click()
 """Dentro del router"""
 """Primer frame"""
 frame = driver.find_element("xpath", '//*[@id="frame1"]')
-#driver.switch_to.frame(frame)
+driver.switch_to.frame(frame)
 control_acceso = driver.find_element("xpath", '//*[@id="menu_fw"]').click()
-#reglar = driver.find_element("xpath", '//*[@id="menu_fwrule"]').click()
+reglar = driver.find_element("xpath", '//*[@id="menu_fwrule"]').click()
 
+"""Segundo frame"""
+driver.switch_to.default_content()
+frame = driver.find_element("xpath", '//*[@id="frame2"]')
+driver.switch_to.frame(frame)
+checkbox = driver.find_element("xpath", '//*[@id="fwid3"]').click()
+bloquear = driver.find_element("xpath", '/html/body/div[1]/div/div/div/p[7]/input[2]').click()
 
+"""tercer frame"""
+driver.switch_to.default_content()
+frame = driver.find_element("xpath", '//*[@id="frame1"]')
+driver.switch_to.frame(frame)
+finalizar_sesion = driver.find_element("xpath", '//*[@id="menu_logout"]').click()
 
-"""
-#cerrar la alerta JS
 time.sleep(1)
 alert = Alert(driver) 
 alert.accept() 
 
 
-#cerrar el navegador
+"""Cerrar el navegador."""
 time.sleep(2)
 driver.close()
 
+"""
 	//*[@id="fwid3"]
 """
