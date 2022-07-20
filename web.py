@@ -29,14 +29,18 @@ clave.send_keys(password)
 boton = driver.find_element("xpath", '//*[@id="loginBtn"]').click()
 
 
+
 """Dentro del router"""
 """Primer frame"""
+"""Control de Acceso y Regla"""
+time.sleep(1) #Es necesario esperar 1 segundo.
 frame = driver.find_element("xpath", '//*[@id="frame1"]')
 driver.switch_to.frame(frame)
 control_acceso = driver.find_element("xpath", '//*[@id="menu_fw"]').click()
 reglar = driver.find_element("xpath", '//*[@id="menu_fwrule"]').click()
 
 """Segundo frame"""
+"""Bloque de usuario"""
 driver.switch_to.default_content()
 frame = driver.find_element("xpath", '//*[@id="frame2"]')
 driver.switch_to.frame(frame)
@@ -44,11 +48,15 @@ checkbox = driver.find_element("xpath", '//*[@id="fwid3"]').click()
 bloquear = driver.find_element("xpath", '/html/body/div[1]/div/div/div/p[7]/input[2]').click()
 
 """tercer frame"""
+"""Finalizar sesión"""
 driver.switch_to.default_content()
 frame = driver.find_element("xpath", '//*[@id="frame1"]')
 driver.switch_to.frame(frame)
 finalizar_sesion = driver.find_element("xpath", '//*[@id="menu_logout"]').click()
 
+
+
+"""Cerrar Alerta JavaScript"""
 time.sleep(1)
 alert = Alert(driver) 
 alert.accept() 
@@ -59,5 +67,5 @@ time.sleep(2)
 driver.close()
 
 """
-	//*[@id="fwid3"]
+	Mayeuri: //*[@id="fwid4"]
 """
