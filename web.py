@@ -6,6 +6,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 import time
+from datetime import datetime
+
 
 #Ejecutar el navegador. 
 driver = webdriver.Firefox()
@@ -44,7 +46,8 @@ reglar = driver.find_element("xpath", '//*[@id="menu_fwrule"]').click()
 driver.switch_to.default_content()
 frame = driver.find_element("xpath", '//*[@id="frame2"]')
 driver.switch_to.frame(frame)
-checkbox = driver.find_element("xpath", '//*[@id="fwid3"]').click()
+#Seleccionamos el dispositivo.
+checkbox = driver.find_element("xpath", '//*[@id="fwid6"]').click()
 bloquear = driver.find_element("xpath", '/html/body/div[1]/div/div/div/p[7]/input[2]').click()
 
 """tercer frame"""
@@ -53,7 +56,6 @@ driver.switch_to.default_content()
 frame = driver.find_element("xpath", '//*[@id="frame1"]')
 driver.switch_to.frame(frame)
 finalizar_sesion = driver.find_element("xpath", '//*[@id="menu_logout"]').click()
-
 
 
 """Cerrar Alerta JavaScript"""
